@@ -8,6 +8,11 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 
 function renderMovieList(data) {
+  if (!movies || !movies.length) {
+    dataPanel.innerHTML = "您還沒有收藏的電影。";
+    return;
+  }
+
   let rawHTML = "";
 
   // processing
@@ -67,7 +72,7 @@ function showMovieModal(id) {
 
 // remove
 function removeFavorite(id) {
-  if (!movies || !movie.length) return;
+  if (!movies || !movies.length) return;
   //防止 movies 是空陣列的狀況
 
   //透過 id 找到要刪除電影的 index
