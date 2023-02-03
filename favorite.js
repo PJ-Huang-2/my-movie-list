@@ -8,8 +8,9 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 
 function renderMovieList(data) {
-  if (!movies || !movies.length) {
-    dataPanel.innerHTML = "您還沒有收藏的電影。";
+  if (!movies || !data.length) {
+    dataPanel.innerHTML =
+      "<h5>您還沒有收藏的電影，可以回到<a  href='./index.html'>電影列表</a>瀏覽</h5>";
     return;
   }
 
